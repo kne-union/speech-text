@@ -1,0 +1,41 @@
+{
+  "isFull": true,
+  "list": [
+    {
+      "title": "录音文件上传识别",
+      "description": "录音文件上传识别",
+      "code": "./base.js",
+      "scope": [
+        {
+          "name": "_SpeechText",
+          "packageName": "@kne/current-lib_speech-text",
+          "importStatement": "import * as _SpeechText from \"@kne-components/speech-text\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        }
+      ]
+    },
+    {
+      "title": "实时语音识别",
+      "description": "实时语音识别",
+      "code": "./realtime.js",
+      "scope": [
+        {
+          "name": "_SpeechText",
+          "packageName": "@kne/current-lib_speech-text",
+          "importStatement": "import * as _SpeechText from \"@kne-components/speech-text\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        },
+        {
+          "name": "_axios",
+          "packageName": "axios"
+        }
+      ]
+    }
+  ]
+}
