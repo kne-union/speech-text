@@ -5,7 +5,7 @@
 example:
 
 ```javascript
-const {start, stop} = await speech(options);
+const { start, stop } = await speech(options);
 ```
 
 #### options:Object
@@ -28,7 +28,7 @@ example:
 
 ```javascript
 const response = await stop();
-const {code, message} = response.data;
+const { code, message } = response.data;
 ```
 
 | 属性名     | 说明               | 类型     | 默认值 |
@@ -43,18 +43,19 @@ const {code, message} = response.data;
 example:
 
 ```javascript
-const {start, stop} = await speechTextRealTime(options);
+const { start, stop } = await speechTextRealTime(options);
 ```
 
 #### options:Object
 
-| 属性名           | 说明                                                         | 类型       | 默认值                                    |
-|---------------|------------------------------------------------------------|----------|----------------------------------------|
-| getToken      | 获取Token方法:getToken():{token,appKey}                        | function | -                                      |
-| onChange      | 识别文本内容发生变化时回调函数                                            | function | ({message}) => {console.log(message);} |
-| getGatewayUrl | 获取WebSocket的url地址: getGatewayUrl({token}):url,可以获取到token参数 | function | -                                      |
-| onComplete    | 录音结束回调方法                                                   | function | -                                      |
-| url           | 保存录音文件url                                                  | string   | -                                      |
+| 属性名           | 说明                                                         | 类型                           | 默认值                                    |
+|---------------|------------------------------------------------------------|------------------------------|----------------------------------------|
+| getToken      | 获取Token方法:getToken():{token,appKey}                        | function                     | -                                      |
+| onChange      | 识别文本内容发生变化时回调函数                                            | function                     | ({message}) => {console.log(message);} |
+| onError       | 错误处理                                                       | function(message,type,error) | -                                      |
+| getGatewayUrl | 获取WebSocket的url地址: getGatewayUrl({token}):url,可以获取到token参数 | function                     | -                                      |
+| onComplete    | 录音结束回调方法                                                   | function                     | -                                      |
+| url           | 保存录音文件url                                                  | string                       | -                                      |
 
 #### 开始录音 start():Promise
 
@@ -62,12 +63,12 @@ example:
 
 ```javascript
 await start({
-    getToken: () => {
-    },
-    onChange: ({message}) => {
-    },
-    onComplete: ({file, taskId, messageId, message, chunks}) => {
-    }
+  getToken: () => {
+  },
+  onChange: ({ message }) => {
+  },
+  onComplete: ({ file, taskId, messageId, message, chunks }) => {
+  }
 });
 ```
 
