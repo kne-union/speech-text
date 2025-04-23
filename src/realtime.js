@@ -12,6 +12,7 @@ const realtime = async options => {
     getToken,
     getGatewayUrl,
     sampleRate,
+    frameSize,
     onError,
     onChange,
     onComplete
@@ -23,7 +24,8 @@ const realtime = async options => {
         console.log(message);
       },
       onError: () => {},
-      sampleRate: 16000
+      sampleRate: 16000,
+      frameSize: 1280
     },
     options
   );
@@ -85,8 +87,10 @@ const realtime = async options => {
         onError('获取麦克风权限失败，请刷新后重试', 'NO_MICROPHONE_PERMISSION', e);
         throw e;
       });
-      const recorder = new window.MediaRecorder(stream);
-      recorder.start(1000);
+      const recorder = new window.MediaRecorder(stream, {
+        mimeType: 'audio/wav'
+      });
+      recorder.start(frameSize);
 
       const audioContext = new (window.AudioContext || window.webkitAudioContext)({
         sampleRate
