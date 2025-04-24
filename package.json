@@ -1,7 +1,7 @@
 {
   "name": "@kne/speech-text",
-  "version": "0.2.0",
-  "description": "对接阿里语音转文字",
+  "version": "0.2.1",
+  "description": "对接阿里和讯飞语音转文字",
   "syntax": {
     "esmodules": true
   },
@@ -10,8 +10,9 @@
   "source": "src/index.js",
   "scripts": {
     "init": "husky && npm run init-example",
-    "start": "run-p start:lib start:md start:example",
-    "build": "run-s build:lib build:md build:example",
+    "cp-xfyun": "node ./scripts/cp.js",
+    "start": "run-p cp-xfyun start:lib start:md start:example",
+    "build": "run-s cp-xfyun build:lib build:md build:example",
     "init-example": "modules-dev-libs-init",
     "build:md": "npx @kne/md-doc",
     "start:md": "npx @kne/md-doc --watch",
@@ -38,7 +39,8 @@
     ]
   },
   "files": [
-    "dist"
+    "dist",
+    "xfyun-dist"
   ],
   "repository": {
     "type": "git",
@@ -77,6 +79,8 @@
     "@kne/microbundle": "^0.15.5",
     "@kne/modules-dev": "^2.0.33",
     "cross-env": "^7.0.3",
+    "crypto-js": "^4.2.0",
+    "fs-extra": "^11.3.0",
     "husky": "^9.0.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",

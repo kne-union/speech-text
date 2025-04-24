@@ -36,6 +36,29 @@
           "packageName": "axios"
         }
       ]
+    },
+    {
+      "title": "讯飞实时语音识别",
+      "description": "讯飞实时语音识别",
+      "code": "./realtimeXfyun.js",
+      "scope": [
+        {
+          "name": "_SpeechText",
+          "packageName": "@kne/current-lib_speech-text",
+          "importStatement": "import * as _SpeechText from \"@kne-components/speech-text\""
+        },
+        {
+          "name": "antd",
+          "packageName": "antd"
+        },
+        {
+          "name": "_axios",
+          "packageName": "axios"
+        },{
+          "name": "cryptoJS",
+          "packageName": "crypto-js"
+        }
+      ]
     }
   ]
 }
