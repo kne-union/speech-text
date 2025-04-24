@@ -1,6 +1,6 @@
 {
   "name": "@kne/speech-text",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "对接阿里和讯飞语音转文字",
   "syntax": {
     "esmodules": true
@@ -19,7 +19,7 @@
     "build:lib": "run-s cp-xfyun build:lib-code",
     "build:lib-code": "microbundle --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
     "start:lib": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
-    "build-example": "run-s cp-xfyun build:example-code",
+    "build:example": "run-s cp-xfyun build:example-code",
     "build:example-code": "cd example && npm run build",
     "start:example": "cd example && npm run start",
     "test:build": "run-s build",
