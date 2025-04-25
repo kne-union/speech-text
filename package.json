@@ -1,6 +1,6 @@
 {
   "name": "@kne/speech-text",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "对接阿里和讯飞语音转文字",
   "syntax": {
     "esmodules": true
